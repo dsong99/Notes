@@ -6,12 +6,12 @@ Run:
 
 1. Start EurekaNamingServer
 
-2. Services project:
+2. Start Services project:
 either start the project from IDE multiple time after changing server.port in application.properties file
 or through CMD, go to target folder, type below command with different port number:
 java -jar services-0.0.1-SNAPSHOT.jar --server.port=8082
 
-3. ServiceProxy
+3. Start ServiceProxy
 
 Check Eureka site: http://localhost:8761
 Services and the proxy should be running 
