@@ -1,0 +1,31 @@
+This simple projects shows how to use Spring cloud with Netflix Eureka, Ribbon and Feign
+
+
+
+Run:
+
+1. Start EurekaNamingServer
+
+2. Services project:
+either start the project from IDE multiple time after changing server.port in application.properties file
+or through CMD, go to target folder, type below command with different port number:
+java -jar services-0.0.1-SNAPSHOT.jar --server.port=8082
+
+3. ServiceProxy
+
+Check Eureka site: http://localhost:8761
+Services and the proxy should be running 
+
+test:
+http://localhost:8081/simple-services/hello
+http://localhost:8082/simple-services/hello
+http://localhost:8083/simple-services/hello
+
+
+
+Test on Proxy:
+http://localhost:9090//simple-services/hello
+http://localhost:9090//simple-services/hello-feign
+
+Refresh the page, you will see response from different port numbers, 
+which means the responses come from different services.
