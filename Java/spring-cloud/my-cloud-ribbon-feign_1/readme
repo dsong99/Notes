@@ -1,0 +1,22 @@
+This simple projects shows how to use Spring cloud with ribbon load balancer
+It shows how to redirect request through Spring RestTemplate and Feign client
+
+
+Run:
+
+Services project:
+either start the project from IDE multiple time after changing server.port in application.properties file
+or through CMD, go to target folder, type below command with different port number:
+java -jar services-0.0.1-SNAPSHOT.jar --server.port=8082
+
+test:
+http://localhost:8081/simple-services/hello
+http://localhost:8082/simple-services/hello
+
+
+Service Proxy project:
+Start it from IDE or CMD
+
+Test:
+http://localhost:9090//simple-services/hello
+http://localhost:9090//simple-services/hello-feign
