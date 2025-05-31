@@ -98,8 +98,17 @@ def main():
     compare_cols = ['Age']
     diff = dataframeCompare.compare_df(df1, df2, keys=keys, compare_cols=compare_cols)
     df = dataframeCompare.process_diff(diff, keys=keys)
-    log.info(df)
+    print(df)
 
+    df1 = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})
+    df2 = pd.DataFrame({'A': [1, 2, 5], 'B': [4, 7, 6]})
+    df1 = df1.reset_index(names='row id')
+    df2 = df2.reset_index(names='row id')
+    keys = ['row id']
+    compare_cols = ['A', 'B']
+    diff = dataframeCompare.compare_df(df1, df2, keys=keys, compare_cols=compare_cols)
+    df = dataframeCompare.process_diff(diff, keys=keys)
+    print(df)
 
 if __name__ == '__main__':
     main()
